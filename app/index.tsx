@@ -59,7 +59,11 @@ export default function Page() {
         );
       }
       return (
-        <Link href={`/note/${note.id}`} key={note.id}>
+        <Link
+          href={`/note/${note.id}`}
+          key={note.id}
+          className="px-4 pt-1 text-base"
+        >
           {note.topic}
         </Link>
       );
@@ -100,7 +104,11 @@ export default function Page() {
     return notes.map((note) => {
       if (!note.isPinned) return;
       return (
-        <Link href={`/note/${note.id}`} key={note.id}>
+        <Link
+          href={`/note/${note.id}`}
+          key={note.id}
+          className="px-4 pt-1 text-base"
+        >
           {note.topic}
         </Link>
       );
@@ -139,14 +147,18 @@ export default function Page() {
 
   return (
     <SafeAreaView>
-      <View>
-        <Text>Notes</Text>
+      <View className="px-4 pb-2">
+        <Text className="text-4xl font-bold">Notes</Text>
       </View>
-      <Text>Pinned Memo</Text>
-      <Button title="Add" onPress={addPinnedNote} />
+      <View className="px-4 flex flex-row items-center">
+        <Text className="flex-1 text-xl font-semibold">Pinned Memo</Text>
+        <Button title="+" onPress={addPinnedNote} />
+      </View>
       {showPinnedNotes()}
-      <Text>Snap Memo</Text>
-      <Button title="Add" onPress={addTmpNote} />
+      <View className="px-4 flex flex-row items-center">
+        <Text className="flex-1 text-xl font-semibold">Snap Memo</Text>
+        <Button title="+" onPress={addTmpNote} />
+      </View>
       {showTmpNotes()}
     </SafeAreaView>
   );

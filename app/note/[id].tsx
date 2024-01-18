@@ -87,24 +87,28 @@ export default function Page() {
   return (
     <View>
       <Link href="/">
-        <Text>{"<"}</Text>
-        <Text> Notes</Text>
+        <View className="pl-2 flex flex-row items-center">
+          <Text className="text-base text-slate-500 font-semibold">{"<"}</Text>
+          <Text className="text-base text-slate-500 font-semibold"> Notes</Text>
+        </View>
       </Link>
       {!isLoading && note && (
-        <>
+        <View className="m-4">
           <TextInput
-            autoFocus={true}
+            autoFocus={note[0].topic === ""}
             onSubmitEditing={focusContent}
             onChangeText={(topic) => saveTopic(topic)}
             value={note[0].topic}
+            className="text-3xl font-bold"
           />
           <TextInput
             multiline={true}
             ref={contentRef}
             onChangeText={(content) => saveContent(content)}
             value={note[0].content}
+            className="text-lg"
           />
-        </>
+        </View>
       )}
     </View>
   );
