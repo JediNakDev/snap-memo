@@ -1,4 +1,4 @@
-import { View, Text, Button, SafeAreaView, FlatList } from "react-native";
+import { View, Text, Button, SafeAreaView } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Link, useRouter } from "expo-router";
 import * as SQLite from "expo-sqlite";

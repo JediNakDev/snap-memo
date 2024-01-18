@@ -1,5 +1,5 @@
 import { View, Text, TextInput } from "react-native";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocalSearchParams } from "expo-router";
 import { Note } from "..";
 import * as SQLite from "expo-sqlite";
